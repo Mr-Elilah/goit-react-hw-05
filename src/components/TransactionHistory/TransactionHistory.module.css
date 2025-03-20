@@ -1,0 +1,21 @@
+.transactionTable {
+  margin: 0 auto;
+  margin-bottom: 46px;
+}
+.transactionTable tbody tr:nth-child(even) {
+  background-color: #534c4c;
+}
+
+.deposit {
+  color: rgb(42, 210, 42);
+}
+.invoice {
+  color: rgb(20, 194, 20);
+}
+.withdrawal {
+  color: rgb(224, 27, 27);
+}
+
+.payment {
+  color: rgb(200, 151, 17);
+}
