@@ -26,7 +26,6 @@ export default function MoviesPage() {
 
     setSearchParams({ query });
     setPage(1);
-    setMovies([]);
   };
 
   useEffect(() => {
@@ -37,17 +36,24 @@ export default function MoviesPage() {
         setError(false);
         setIsLoading(true);
         setNoResults(false);
+
         const response = await fetchSearchMovies(debouncedQuery, page);
-        console.log("API Response:", response);
         if (!response.results || response.results.length === 0) {
-          setNoResults(true);
           setMovies([]);
+          setNoResults(true);
+
           return;
         }
 
-        setMovies((prev) =>
-          page === 1 ? response.results : [...prev, ...response.results]
-        );
+        setMovies((prev) => {
+          if (page === 1) {
+            return response.results;
+          } else {
+            return [...prev, ...response.results];
+          }
+        });
+
+        setNoResults(false);
       } catch {
         setError(true);
         toast.error("An error occurred! Please reload.");
