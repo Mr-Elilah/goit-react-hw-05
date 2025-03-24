@@ -38,9 +38,10 @@ export default function MoviesPage() {
         setIsLoading(true);
         setNoResults(false);
         const response = await fetchSearchMovies(debouncedQuery, page);
-
-        if (response.length === 0) {
+        console.log("API Response:", response);
+        if (!response.results || response.results.length === 0) {
           setNoResults(true);
+          setMovies([]);
           return;
         }
 
