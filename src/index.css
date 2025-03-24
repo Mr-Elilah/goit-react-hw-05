@@ -28,7 +28,7 @@ ul {
 
 a {
   color: var(--text-grey-modal);
-  text-decoration: none;
+  text-decoration: dotted;
 }
 
 button {
