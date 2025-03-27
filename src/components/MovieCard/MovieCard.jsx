@@ -1,3 +1,5 @@
+import css from "./MovieCard.module.css";
+
 export default function MovieCard({
   title,
   poster_path,
@@ -10,7 +12,7 @@ export default function MovieCard({
   const year = release_date ? release_date.slice(0, 4) : "N/A";
 
   return (
-    <div>
+    <div className={css.movieCard}>
       <div>
         <img
           src={
@@ -22,14 +24,16 @@ export default function MovieCard({
         />
       </div>
       <div>
-        <h2>
+        <h2 className={css.title}>
           {title} ({year})
         </h2>
-        <p>User Score: {score}</p>
-        <h3>Overview</h3>
-        <p>{overview}</p>
-        <h4>Genres</h4>
-        <p>{genres.map((genre) => genre.name).join(" ")}</p>
+        <p className={css.text}>User Score: {score}</p>
+        <h3 className={css.title}>Overview</h3>
+        <p className={css.text}>{overview}</p>
+        <h4 className={css.title}>Genres</h4>
+        <p className={css.text}>
+          {genres.map((genre) => genre.name).join(" ")}
+        </p>
       </div>
     </div>
   );

@@ -40,27 +40,30 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
-      <Link to={backLinkRef.current}>Go back</Link>
+      <Link className={css.linkBack} to={backLinkRef.current}>
+        &lt; Go back
+      </Link>
+      <div>
+        {isLoading && <Loader />}
+        {error && <ErrorMessage />}
+        {movie && <MovieCard {...movie} />}
 
-      {isLoading && <Loader />}
-      {error && <ErrorMessage />}
-      {movie && <MovieCard {...movie} />}
-
-      <ul className={css.linkBox}>
-        <li>
-          <NavLink to="cast" className={getLinkStyles}>
-            Cast
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="reviews" className={getLinkStyles}>
-            Reviews
-          </NavLink>
-        </li>
-      </ul>
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
+        <ul className={css.linkBox}>
+          <li>
+            <NavLink to="cast" className={getLinkStyles}>
+              Cast
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="reviews" className={getLinkStyles}>
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </div>
     </div>
   );
 }

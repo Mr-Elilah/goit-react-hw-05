@@ -1,13 +1,13 @@
-.friendList {
+.list {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 86px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.friendListItem {
-  background-color: #b1d6de;
-  padding: 20px;
-  border: 1px solid black;
+.listItem {
+  padding: 12px;
+  border: 1px solid gray;
   border-radius: 10px;
+}
+.text {
+  max-width: 185px;
 }

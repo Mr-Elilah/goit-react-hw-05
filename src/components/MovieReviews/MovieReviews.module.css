@@ -1,15 +1,8 @@
-.friendName {
-  font-weight: bold;
-  text-align: center;
+.author {
+  margin-bottom: 8px;
 }
-
-.online {
-  color: rgb(35, 171, 76);
-  text-align: center;
-}
-.offline {
-  color: brown;
-  font-size: small;
-  text-align: center;
-  margin-top: 4px;
+.content {
+  padding-bottom: 4px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 8px;
 }

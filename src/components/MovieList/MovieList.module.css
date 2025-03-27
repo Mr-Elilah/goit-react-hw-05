@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+}
+.listItem {
+  padding: 12px;
+  border: 1px solid gray;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.title {
+  max-width: 154px;
+}

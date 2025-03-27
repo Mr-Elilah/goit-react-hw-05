@@ -3,6 +3,7 @@ import { fetchHomePageMovies } from "../../movieService";
 import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import css from "./HomePage.module.css";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -28,7 +29,7 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>Trending Today</h1>
+      <h1 className={css.title}>Trending Today</h1>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
       {movies.length > 0 && <MovieList movies={movies} />}

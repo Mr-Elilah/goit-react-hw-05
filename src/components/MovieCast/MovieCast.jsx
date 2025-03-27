@@ -3,6 +3,7 @@ import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -33,9 +34,9 @@ export default function MovieCast() {
       {error && <ErrorMessage />}
 
       {cast.length > 0 ? (
-        <ul>
+        <ul className={css.list}>
           {cast.map(({ credit_id, profile_path, name, character }) => (
-            <li key={credit_id}>
+            <li key={credit_id} className={css.listItem}>
               <img
                 src={
                   profile_path
@@ -44,8 +45,8 @@ export default function MovieCast() {
                 }
                 alt={`Photo of ${name}`}
               />
-              <h4>{name}</h4>
-              <p>Character: {character}</p>
+              <h4 className={css.text}>{name}</h4>
+              <p className={css.text}>Character: {character}</p>
             </li>
           ))}
         </ul>

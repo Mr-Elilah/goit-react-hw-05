@@ -1,0 +1,11 @@
+.movieCard {
+  display: flex;
+  gap: 12px;
+}
+.title {
+  margin-bottom: 14px;
+}
+.text {
+  margin-bottom: 8px;
+  max-width: 450px;
+}
